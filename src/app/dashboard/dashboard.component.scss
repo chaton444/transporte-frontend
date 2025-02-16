@@ -1,0 +1,210 @@
+/* Estilos generales del dashboard */
+.dashboard {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+
+    min-height: 100vh;
+  }
+
+  
+  
+  .header h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+  }
+  .home-button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+  }
+  .home-button-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+  }
+  
+  .logout-button {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #ff6b81;
+  }
+  
+  /* Seccion de filtros */
+  .filtros {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .filtros-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .filtro-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .filtro-group label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .filtro-group input,
+  .filtro-group select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .filtro-group input:hover,
+  .filtro-group select:hover {
+    border-color: #007bff;
+  }
+  
+  .aplicar-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+    grid-column: span 2;
+  }
+  
+  .aplicar-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Seccion de resultados */
+  .resultados {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; 
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; 
+  }
+  
+  table th,
+  table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    
+    min-width: 100px; 
+  }
+  
+  table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+
+  }
+  table th:hover {
+    background-color: #156fd0;
+    color: white;
+    font-weight: bold;
+
+  }
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .no-data-message {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    padding: 20px;
+  }
+  
+
+
+  .logout-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .filtros {
+    margin: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .filtro-group {
+    margin-bottom: 10px;
+  }
+  
+  .aplicar-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .aplicar-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .resultados {
+    margin-top: 20px;
+  }
+  
+  .no-data-message {
+    color: #e74c3c;
+    font-size: 1.2rem;
+  }
+  
+
+  .chart-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    height: 50vh;
+  }
+  

@@ -1,0 +1,110 @@
+<div class="dashboard">
+    <!-- Barra superior del titulo (header)y boton de logout -->
+    <header class="header">
+      <h1>Dashboard de Transporte</h1>
+      <div class="home-button-container">
+        <button class="home-button">Inicio</button>
+      </div>
+      
+
+      <button class="logout-button" (click)="logout()">Cerrar Sesion</button>
+    </header>
+    
+    <!-- Seccion de filtros -->
+    <section class="filtros">
+      <div class="filtros-container">
+        <!-- Select para Año Inicio -->
+        <div class="filtro-group">
+          <label for="anioInicio">Año Inicio:</label>
+          <select id="anioInicio" [(ngModel)]="anioInicio">
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+          </select>
+        </div>
+  
+        <!-- Select para Año Fin -->
+        <div class="filtro-group">
+          <label for="anioFin">Año Fin:</label>
+          <select id="anioFin" [(ngModel)]="anioFin">
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+          </select>
+        </div>
+  
+        <!-- Select para Mes Inicio -->
+        <div class="filtro-group">
+          <label for="mesInicio">Mes Inicio:</label>
+          <select id="mesInicio" [(ngModel)]="mesInicio">
+            <option *ngFor="let month of months" [value]="month.value">{{ month.name }}</option>
+          </select>
+        </div>
+  
+        <!-- Select para Mes Fin -->
+        <div class="filtro-group">
+          <label for="mesFin">Mes Fin:</label>
+          <select id="mesFin" [(ngModel)]="mesFin">
+            <option *ngFor="let month of months" [value]="month.value">{{ month.name }}</option>
+          </select>
+        </div>
+  
+        <!-- Select para Transporte -->
+        <div class="filtro-group">
+          <label for="transporte">Transporte:</label>
+          <select id="transporte" [(ngModel)]="transporte">
+            <option value="Todos">Todos</option>
+            <option *ngFor="let transport of transportes" [value]="transport">{{ transport }}</option>
+          </select>
+        </div>
+  
+        <!-- Checkbox para Incluir Preliminares en caso de años recientes -->
+        <div class="filtro-group">
+          <label for="incluirPreliminares">Incluir Preliminares:</label>
+          <input type="checkbox" id="incluirPreliminares" [(ngModel)]="incluirPreliminares" />
+        </div>
+  
+        <!-- Boton para Aplicar Filtros -->
+        <button class="aplicar-button" (click)="aplicarFiltros()">Aplicar Filtros</button>
+        
+      </div>
+    </section>
+  
+    <!-- Seccion de resultados -->
+    <section class="resultados">
+      <div *ngIf="datosFiltrados.length > 0; else noData">
+        <table>
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Mes</th>
+              <th>Transporte</th>
+              <th>Ingresos por Pasaje</th>
+              <th>Kilómetros Recorridos</th>
+              <th>Longitud de Servicio</th>
+              <th>Pasajeros Transportados</th>
+              <th>Unidades en Operación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of datosFiltrados">
+              <td>{{ item.anio }}</td>
+              <td>{{ item.id_mes }}</td>
+              <td>{{ item.transporte }}</td>
+              <td>{{ item.ingresos || 'N/A' }}</td>
+              <td>{{ item.kilometros || 'N/A' }}</td>
+              <td>{{ item.longitud || 'N/A' }}</td>
+              <td>{{ item.pasajeros || 'N/A' }}</td>
+              <td>{{ item.unidades || 'N/A' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #noData>
+        <p class="no-data-message">No hay datos para mostrar.</p>
+      </ng-template>
+    </section>
+    <!-- Contenedor para la grafica -->
+<section class="chart-container">
+    <div id="chart" style="width: 100%; height: 400px;"></div>
+  </section>
+  
+    
+  </div>
+  
